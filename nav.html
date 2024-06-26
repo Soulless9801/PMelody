@@ -1,20 +1,26 @@
 <!-- Master Navbar Code -->
-<nav class="navbar navbar-expand bg-light">
+<nav class="navbar navbar-expand-sm bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">Project Melody</a>
-    <ul class="nav scroll text-nowrap flex-nowrap me-auto" style="overflow-x: auto;">
-      <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="/#staff">Staff</a></li>
-      <!--<li class="nav-item"><a class="nav-link" href="/events.html">Events</a></li>-->
-      <li class="nav-item"><a class="nav-link" href="/news/newspapers.html">Newsletters</a></li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Family Site</a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-item"><a href="https://www.youtube.com/@weareprojectmelody">Youtube</a></li>
-          <li class="dropdown-item"><a href="https://www.instagram.com/project_melody_music/">Instagram</a></li>
-          <li class="dropdown-item"><a href="https://austinchineseamericannetwork.org/projectmelody/">ACAN</a></li>
-        </ul>
-      </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#staff">Staff</a></li>
+        <!--<li class="nav-item"><a class="nav-link" href="/events/events.html">Events</a></li>-->
+        <li class="nav-item"><a class="nav-link" href="/news/newspapers.html">Newsletters</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Family Site</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://www.youtube.com/@weareprojectmelody">Youtube</a>
+            <a class="dropdown-item" href="https://www.instagram.com/project_melody_music/">Instagram</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://austinchineseamericannetwork.org/projectmelody/">ACAN</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
