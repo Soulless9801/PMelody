@@ -20,6 +20,8 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <!-- Nav Bar-->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<!-- Announcement Cards -->
+	<link href="/events/events.css" rel="stylesheet" />
     <!-- Table -->
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -34,7 +36,35 @@
     <script>
         $(function () {$("#nav-placeholder").load("/nav.html");});
     </script>
+	<!--
+    <div class="container-fluid" style="width:90%;display:block;margin-left:auto;margin-right:auto;">
+        <br>
+        <h1>Upcoming</h1>
+        <hr>
+        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-12">
+            <div class="card">
+                <div class="card-heading">
+                    <span class="card-text">Date</span>
+                </div>
+                <div class="card-heading" >
+                    <span class="card-title">Concert</span>
+                </div>
+                <div class="card-bottom">
+                    <span class="card-text">Location</span>
+                    <a href="/#" class="card-link" style="float:right;">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container-fluid" style="width:90%;display:block;margin-left:auto;margin-right:auto;">
+        <br>
+        <h1>Volunteer Hours</h1>
+        <hr>
+        
+        <br>
+    </div>
+    -->
     <div class="container-fluid" style="width:90%;display:block;margin-left:auto;margin-right:auto;">
         <br>
         <h1>Past Events</h1>
@@ -54,10 +84,7 @@
             <tbody></tbody>
         </table>
     </div>
-    <!-- Table CSS and Script -->
-    <style>
-        th, td {white-space: nowrap;}
-    </style>
+    <!-- Table Script -->
     <script>
         var table = new DataTable('#concertTable', {
             scrollX: true,
@@ -68,13 +95,14 @@
             lengthMenu: [5, 10, 20, 50, 100],
         });
         var i;
-        fetch("/events/myConcerts.txt").then((res) => res.text()).then((text) => {
-            lines = text.split(/\r?\n/);
-            for (i = 1; i < Math.floor(lines.length / 4); i++) {
+        fetch("/events/myConcerts.csv").then((res) => res.text()).then((text) => {
+            txt = text.split(/\r?\n/);
+            for (i = 1; i < txt.length; i++) {
+                lines = txt[i].split(",");
                 var node = table.row.add([
-                    lines[i * 4],
-                    lines[i * 4 + 1],
-                    "<a class=\"btn btn-link\" href=\"" + lines[i * 4 + 2] + "\">Recording</a>"
+                    lines[0],
+                    lines[1],
+                    "<a class=\"btn btn-link\" href=\"" + lines[2] + "\">Recording</a>"
                 ]).draw(false).node();
                 $(node).addClass("table-dark");
             }

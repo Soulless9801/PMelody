@@ -1,0 +1,43 @@
+.card{
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+  height: 125px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.card-heading{
+  display: block;
+  position:relative;
+  margin-top: 10px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.card-bottom{
+  display: inline-block;
+  position: absolute;
+  padding: 0 15px;
+  bottom: 10px;
+  width: 100%;
+}
+
+.card-title{
+  font-size:28px;
+  font-weight: 500;
+}
+
+.card-text{
+  color: #888;
+  font-size: 16px;
+}
+
+.card-link{
+  color: #41C1F2;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+th, td {
+	white-space: nowrap;
+}
